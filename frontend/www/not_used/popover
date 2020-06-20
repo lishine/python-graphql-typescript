@@ -1,0 +1,37 @@
+                    {/* <Popover usePortal>
+                        <PopoverTrigger>
+                            <Box isTruncated>{cell.value}</Box>
+                        </PopoverTrigger>
+                        <PopoverContent maxW='320px' zIndex={4}>
+                            <PopoverBody>
+                                <PopupContent columns={columns} row={row} />
+                            </PopoverBody>
+                        </PopoverContent>
+                    </Popover> */}
+
+const PopupContent = (props: any) => {
+    return (
+        <Flex justifyContent='center'>
+            <Box as='table'>
+                <Box as='thead'>
+                    <Box as='tr'>
+                        {props.columns.map((th: string) => (
+                            <Box as='th' px={4} key={th}>
+                                {th}
+                            </Box>
+                        ))}
+                    </Box>
+                </Box>
+                <Box as='tbody'>
+                    <Box as='tr'>
+                        {props.columns.map((th: string) => (
+                            <Box as='td' px={4} key={th}>
+                                {props.row[th]}
+                            </Box>
+                        ))}
+                    </Box>
+                </Box>
+            </Box>
+        </Flex>
+    )
+}

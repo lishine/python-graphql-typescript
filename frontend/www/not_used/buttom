@@ -1,0 +1,53 @@
+                <Bottom>
+                    <Flex>
+                        <TableIconButton
+                            mr={2}
+                            onClick={() => gotoPage(0)}
+                            isDisabled={!canPreviousPage}
+                            icon={() => <ChevronsLeft size={20} />}
+                        />
+                        <TableIconButton
+                            mr={2}
+                            isDisabled={!canPreviousPage}
+                            onClick={() => previousPage()}
+                            icon={() => <ChevronLeft size={20} />}
+                        />
+                    </Flex>
+                    <Flex alignItems='center'>
+                        <Text whiteSpace='nowrap' mr={4}>
+                            Page{' '}
+                            <Text as='span' fontWeight='semibold'>
+                                {pageIndex + 1} of {pageOptions.length}
+                            </Text>{' '}
+                        </Text>
+                        {!isTabletOrMobile && (
+                            <Select
+                                size='sm'
+                                value={pageSize}
+                                onChange={(e) => {
+                                    setPageSize(Number(e.target.value))
+                                }}
+                            >
+                                {[2, 5, 10, 20].map((pageSize) => (
+                                    <option key={pageSize} value={pageSize}>
+                                        Show {pageSize}
+                                    </option>
+                                ))}
+                            </Select>
+                        )}
+                    </Flex>
+                    <Flex>
+                        <TableIconButton
+                            ml={2}
+                            isDisabled={!canNextPage}
+                            onClick={() => nextPage()}
+                            icon={() => <ChevronRight size={20} />}
+                        />
+                        <TableIconButton
+                            ml={2}
+                            onClick={() => gotoPage(pageCount ? pageCount - 1 : 1)}
+                            isDisabled={!canNextPage}
+                            icon={() => <ChevronsRight size={20} />}
+                        />
+                    </Flex>
+                </Bottom>

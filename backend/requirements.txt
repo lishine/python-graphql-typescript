@@ -1,0 +1,9 @@
+ariadne
+starlette
+uvicorn
+asyncio
+broadcaster[redis]
+
+autopep8
+rope
+pylint

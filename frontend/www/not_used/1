@@ -1,0 +1,37 @@
+const a = {
+    items: ['Buy shoes1', 'Buy shoes2', 'Buy shoes3', 'Buy shoes4', 'Buy shoes5', 'Buy shoes6'],
+}    let t1, t2
+        t1 = performance.now()
+        for (let i = 0; i < 1000; i++) {
+            store.addModel(`atodos${i}`, {
+                items: a,
+            })
+        }
+        // for (let i = 0; i < 1000; i++) {
+        //     store.removeModel(`atodos${i}`)
+        // }
+        t2 = performance.now()
+        console.log(t2 - t1)
+        t1 = performance.now()
+        for (let i = 0; i < 1000; i++) {
+            store.addModel(`atodos${1000 + i}`, {
+                items: a,
+            })
+        }
+        for (let i = 0; i < 1000; i++) {
+            store.removeModel(`atodos${1000 + i}`)
+        }
+        t2 = performance.now()
+        console.log(t2 - t1)
+    // const { addModel, removeModel } = useStore()
+    // useEffect(() => {
+    //     let tm: any = null
+    //     const fn = () => {
+    //         addModel('a', { a: 1 })
+    //         tm = setTimeout(() => {
+    //             removeModel('a')
+    //             fn()
+    //         }, 100)
+    //     }
+    //     fn()
+    // }, [removeModel, addModel])

@@ -1,0 +1,34 @@
+type_defs = """
+    type Counter {
+        str: String!
+        count: Int!
+    }
+
+    type Query {
+        hello: String!
+    }
+
+    type Subscription {
+        counter: Counter!
+        test: String!
+    }
+"""
+
+CHANNEL = "test_updates"
+def serialize_message(str: str) -> str:
+    return json.dumps(str)
+async def publish_update(str: str):
+    await broadcast.publish(channel=CHANNEL, message=json.dumps(str))
+@subscription.source("counter")
+async def counter_generator(obj, info):
+    for i in range(5000):
+        await publish_update(f"publishing: {i}")
+        await asyncio.sleep(1)
+        yield i
+@subscription.field("counter")
+def counter_resolver(count, info):
+    return {'count': count, 'str': 'HERE'}
+
+@query.field("hello")
+def resolve_hello(*_):
+    return "Hello world!"
