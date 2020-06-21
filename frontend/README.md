@@ -1,8 +1,3 @@
-# Typescript Frontend
-- React
-- Graphql(apollo client)
-- subscription
-
 ## The actual code is in
 - www/src/modules/scan/Scan.tsx
 

@@ -1,8 +1,3 @@
-# Python Backend
-- starlette
-- graphql(ariadne)
-- subscriptions with Redis pubsub
-
 ## The actual code is in
 - app.py
 - data.py
