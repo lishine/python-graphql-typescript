@@ -10,6 +10,6 @@
 s- Graphql (Apollo client)
 - Subscription
 
-### Develop instructions are under subfolders
+## Develop instructions are under subfolders
 
 ![Demo](https://github.com/lishine/python-graphql-typescript/blob/master/demo.gif "Demo")
