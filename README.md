@@ -3,12 +3,12 @@
 
 ## Python Backend
 - Starlette
-- Graphql(ariadne)
+- Graphql (Ariadne)
 - Subscriptions with Redis pubsub
 
 ## Typescript Frontend
 - React (Next.js)
-- Graphql (apollo client)
+- Graphql (Apollo client)
 - Subscription
 
-### Develop instructions are under backend/frontend folders
+### Develop instructions are under subfolders
