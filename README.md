@@ -11,7 +11,6 @@
 - Subscription
 
 ## Develop instructions are under subfolders
-
-
+##
 
 ![Demo](https://github.com/lishine/python-graphql-typescript/blob/master/demo.gif "Demo")
