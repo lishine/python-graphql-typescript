@@ -7,7 +7,7 @@
 
 ## Typescript Frontend
 - React (Next.js)
-s- Graphql (Apollo client)
+- Graphql (Apollo client)
 - Subscription
 
 ## Develop instructions are under subfolders
